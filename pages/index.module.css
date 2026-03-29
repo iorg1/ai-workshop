@@ -1,0 +1,314 @@
+/* ── Reset & base ─────────────────────────────────────────── */
+.pageWrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: -0.02em;
+}
+
+.header p {
+  margin-top: 0.5rem;
+  color: #64748b;
+  font-size: 1.05rem;
+}
+
+/* ── Form card ────────────────────────────────────────────── */
+.formCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.formCard label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.formCard textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.formCard textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+.formHint {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error box ────────────────────────────────────────────── */
+.errorBox {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Plan section ─────────────────────────────────────────── */
+.planHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.planHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dayCountBadge {
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 2rem;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.daysGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Day cards ────────────────────────────────────────────── */
+.dayCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.dayCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.9rem 1.25rem;
+}
+
+.dayNumber {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.dayTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.dayDate {
+  margin-left: auto;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+.dayCardBody {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Section within a day card ────────────────────────────── */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.6rem;
+}
+
+.sectionTitle.activities { color: #059669; }
+.sectionTitle.accommodation { color: #7c3aed; }
+.sectionTitle.transport { color: #d97706; }
+
+/* ── Activities list ──────────────────────────────────────── */
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.activityItem {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.activityName {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.activityMeta {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+.activityDescription {
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+}
+
+.activityTips {
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  color: #065f46;
+  font-style: italic;
+}
+
+/* ── Accommodation ────────────────────────────────────────── */
+.accommodationCard {
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.accommodationName {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.accommodationMeta {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+.accommodationDescription {
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+}
+
+/* ── Transport list ───────────────────────────────────────── */
+.transportList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transportItem {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+}
+
+.transportMethod {
+  font-weight: 700;
+  color: #92400e;
+  background: #fef3c7;
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.78rem;
+}
+
+.transportRoute {
+  flex: 1;
+}
+
+.transportMeta {
+  font-size: 0.78rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.7rem; }
+  .dayCardHeader { flex-wrap: wrap; }
+  .dayDate { margin-left: 0; width: 100%; }
+}
