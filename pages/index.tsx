@@ -1,106 +1,18 @@
 import Head from "next/head";
 import { useState } from "react";
-import type { TravelPlan, DayPlan, Activity, Accommodation, Transport } from "../src/types/travel.js";
+import type { TravelPlan } from "../src/types/travel.js";
 import styles from "./index.module.css";
-
-// ── Sub-components ──────────────────────────────────────────
-
-function ActivityCard({ activity }: { activity: Activity }) {
-  return (
-    <div className={styles.activityItem}>
-      <div className={styles.activityName}>{activity.name}</div>
-      <div className={styles.activityMeta}>⏱ {activity.duration}</div>
-      <div className={styles.activityDescription}>{activity.description}</div>
-      {activity.tips && (
-        <div className={styles.activityTips}>💡 {activity.tips}</div>
-      )}
-    </div>
-  );
-}
-
-function AccommodationCard({ accommodation }: { accommodation: Accommodation }) {
-  return (
-    <div className={styles.accommodationCard}>
-      <div className={styles.accommodationName}>{accommodation.name}</div>
-      <div className={styles.accommodationMeta}>
-        🏨 {accommodation.type}
-        {accommodation.estimatedCostPerNight && (
-          <span> · {accommodation.estimatedCostPerNight} / night</span>
-        )}
-      </div>
-      <div className={styles.accommodationDescription}>{accommodation.description}</div>
-    </div>
-  );
-}
-
-function TransportCard({ transport }: { transport: Transport }) {
-  return (
-    <div className={styles.transportItem}>
-      <span className={styles.transportMethod}>{transport.method}</span>
-      <span className={styles.transportRoute}>
-        {transport.from} → {transport.to}
-      </span>
-      <span className={styles.transportMeta}>
-        ⏱ {transport.duration}
-        {transport.estimatedCost && <> · {transport.estimatedCost}</>}
-      </span>
-    </div>
-  );
-}
-
-function DayCard({ day }: { day: DayPlan }) {
-  return (
-    <div className={styles.dayCard}>
-      <div className={styles.dayCardHeader}>
-        <div>
-          <div className={styles.dayNumber}>Day {day.day}</div>
-          <div className={styles.dayTitle}>{day.title}</div>
-        </div>
-        {day.date && <div className={styles.dayDate}>{day.date}</div>}
-      </div>
-
-      <div className={styles.dayCardBody}>
-        {/* Activities */}
-        <div>
-          <div className={`${styles.sectionTitle} ${styles.activities}`}>🗺 Activities</div>
-          <div className={styles.activitiesList}>
-            {day.activities.map((activity, i) => (
-              <ActivityCard key={i} activity={activity} />
-            ))}
-          </div>
-        </div>
-
-        {/* Accommodation */}
-        <div>
-          <div className={`${styles.sectionTitle} ${styles.accommodation}`}>🛏 Accommodation</div>
-          <AccommodationCard accommodation={day.accommodation} />
-        </div>
-
-        {/* Transport */}
-        {day.transport.length > 0 && (
-          <div>
-            <div className={`${styles.sectionTitle} ${styles.transport}`}>🚆 Transport</div>
-            <div className={styles.transportList}>
-              {day.transport.map((t, i) => (
-                <TransportCard key={i} transport={t} />
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
+import DayCard from "../src/components/DayCard.js";
 
 // ── Main page ───────────────────────────────────────────────
 
-export default function HomePage() {
+const HomePage = () => {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [plan, setPlan] = useState<TravelPlan | null>(null);
 
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!description.trim()) return;
 
@@ -127,7 +39,7 @@ export default function HomePage() {
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <>
@@ -194,4 +106,6 @@ export default function HomePage() {
       </div>
     </>
   );
-}
+};
+
+export default HomePage;
