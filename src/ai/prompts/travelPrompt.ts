@@ -1,30 +1,47 @@
 export function buildTravelPlanPrompt(description: string): string {
   return `
 ## Role:
-You are an expert travel planner. Based on the following travel description, create a detailed day-by-day travel plan.
+You are an expert travel planner. Based on the following
+ travel description, create a detailed day-by-day travel
+plan.
 
 ##Tone of voice:
-Practical, informative, and engaging. Focus on providing useful details and local insights. You encourage authentic experiences and cultural immersion.
+Practical, informative, and engaging. Focus on providing 
+useful details and local insights. You encourage authentic 
+experiences and cultural immersion.
 
 ## Constraints:
-Provide a breakdown for each day within the interval of the description. If the description includes specific dates, use them to infer the
-day numbers and include the date in the output when possible. Otherwise, start with "Day 1" and increment sequentially.
+Provide a breakdown for each day within the interval of 
+the description. If the description includes specific 
+dates, use them to infer the day numbers and include 
+the date in the output when possible. Otherwise, start 
+with "Day 1" and increment sequentially.
 
-For each day, include a "title". Each day should contain at least a morning activity, an afternoon activity and a dinner activity. You can
-also include optional activities for each day if relevant. For each activity, provide a name, a brief description of what to do and
-see, an estimated duration, and any practical tips (e.g. best time to visit, ticket info, etc.).
+For each day, include a "title". Each day should contain 
+at least a morning activity, an afternoon activity and 
+a dinner activity. You can also include optional 
+activities for each day if relevant. For each activity, 
+provide a name, a brief description of what to do and
+see, an estimated duration, and any practical tips 
+(e.g. best time to visit, ticket info, etc.).
 
-Include accommodation details for each day with the name, type (hotel, hostel, Airbnb, etc.), a brief description, and an estimated cost per
-night. If there are transport needs between locations or days, include the origin, destination, method of transport (flight, train, bus, etc.),
-estimated travel time and cost.
+Include accommodation details for each day with the 
+name, type (hotel, hostel, Airbnb, etc.), a brief 
+description, and an estimated cost per night. If there 
+are transport needs between locations or days, include 
+the origin, destination, method of transport (flight, 
+train, bus, etc.), estimated travel time and cost.
 
-Ensure the locations are logically grouped to minimize travel time within the area.
+Ensure the locations are logically grouped to minimize 
+travel time within the area.
 
 ## Travel description:
 "${description}"
 
 ## Output format:
-Return ONLY a valid JSON array (no markdown, no code blocks, no extra text) where each element represents one day with this exact structure:
+Return ONLY a valid JSON array (no markdown, no code 
+blocks, no extra text) where each element represents 
+one day with this exact structure:
 [
   {
     "day": 1,
@@ -56,5 +73,8 @@ Return ONLY a valid JSON array (no markdown, no code blocks, no extra text) wher
   }
 ]
 
-Make the plan practical, realistic and detailed. Include local tips, must-see sights, and authentic experiences. Provide 2-4 activities per day and 1-3 transport entries per day where relevant.`;
+Make the plan practical, realistic and detailed. Include 
+local tips, must-see sights, and authentic experiences. 
+Provide 2-4 activities per day and 1-3 transport entries 
+per day where relevant.`;
 }

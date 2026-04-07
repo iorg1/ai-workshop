@@ -13,5 +13,3 @@ function getApiKey(): string {
 export function createGoogleAIClient(): GoogleGenerativeAI {
   return new GoogleGenerativeAI(getApiKey());
 }
-
-export const MODEL_NAME = "gemini-3-flash-preview";
