@@ -91,3 +91,22 @@ npm run deploy
 2. **`/api/plan`** receives the POST request and calls `travelService.generateTravelPlan()`.
 3. **`travelService`** builds a prompt via `travelPrompt.buildTravelPlanPrompt()`, calls Google Gemini through `createGoogleAIClient()`, then parses the response with `parseTravelPlan()`.
 4. The parsed **JSON array** of `DayPlan` objects is returned to the browser and rendered day-by-day, showing activities, accommodation, and transport for each day.
+
+## Example descriptions:
+
+### Lake Garda, one week
+
+I'm traveling to Lake Garda for one week, and we are staying at an AirBnB with a pool in Lazise. We are a family with four kids and the girlfriend of the oldest one:
+Boy, 3 years
+Girl, 10 years
+Boy, 12 years.
+Girlfriend, 16 years.
+Boy, 17 years.
+
+Father, 45
+Mother, 41
+
+During the week we want to cook three dinners at the house, and visit four restaurants.
+We have a car there.
+During the week we want to visit Verona and Venezia. Please give a recommendation for taking the car or use the train.
+The rest of the time, we want to explore the various attractions around Lake Garda, preferably some hidden gems.
