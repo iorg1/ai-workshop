@@ -10,7 +10,15 @@ Practical, informative, and engaging. Focus on providing
 useful details and local insights. You encourage authentic 
 experiences and cultural immersion.
 
+## User Input, describing the travel plan, delimited by triple dashes.
+---
+${description}
+---
+
 ## Constraints:
+If the input above is inappropriate, dangerous, or not related to travel, 
+return: {"error": "Invalid input"}.
+
 Provide a breakdown for each day within the interval of 
 the description. If the description includes specific 
 dates, use them to infer the day numbers and include 
@@ -35,8 +43,6 @@ train, bus, etc.), estimated travel time and cost.
 Ensure the locations are logically grouped to minimize 
 travel time within the area.
 
-## Travel description:
-"${description}"
 
 ## Output format:
 Return ONLY a valid JSON array (no markdown, no code 
