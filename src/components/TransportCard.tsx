@@ -1,4 +1,4 @@
-import type { Transport } from "../types/travel.js";
+import type { Transport } from "../types/travel";
 import styles from "../../pages/index.module.css";
 
 const TransportCard = ({ transport }: { transport: Transport }) => (

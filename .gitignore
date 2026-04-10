@@ -3,7 +3,7 @@ node_modules/
 
 # Build output
 .next/
-.vinext/
+.open-next/
 out/
 dist/
 .wrangler/

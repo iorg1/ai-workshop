@@ -1,8 +1,8 @@
-import type { DayPlan } from "../types/travel.js";
+import type { DayPlan } from "../types/travel";
 import styles from "../../pages/index.module.css";
-import ActivityCard from "./ActivityCard.js";
-import AccommodationCard from "./AccommodationCard.js";
-import TransportCard from "./TransportCard.js";
+import ActivityCard from "./ActivityCard";
+import AccommodationCard from "./AccommodationCard";
+import TransportCard from "./TransportCard";
 
 const DayCard = ({ day }: { day: DayPlan }) => (
   <div className={styles.dayCard}>

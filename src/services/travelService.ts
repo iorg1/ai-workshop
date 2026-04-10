@@ -1,5 +1,5 @@
-import type { TravelPlan } from "../types/travel.js";
-import { buildTravelPlanPrompt } from "../ai/prompts/travelPrompt.js";
+import type { TravelPlan } from "../types/travel";
+import { buildTravelPlanPrompt } from "../ai/prompts/travelPrompt";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function generateTravelPlan(description: string): Promise<TravelPlan> {
