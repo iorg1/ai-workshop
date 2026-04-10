@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { generateTravelPlan } from "../../src/services/travelService.js";
-import type { TravelPlanRequest, TravelPlanResponse } from "../../src/types/travel.js";
+import { generateTravelPlan } from "../../src/services/travelService";
+import type { TravelPlanRequest, TravelPlanResponse } from "../../src/types/travel";
 
 type ErrorResponse = { error: string };
 

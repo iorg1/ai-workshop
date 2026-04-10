@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
-import type { TravelPlan } from "../src/types/travel.js";
+import type { TravelPlan } from "../src/types/travel";
 import styles from "./index.module.css";
-import DayCard from "../src/components/DayCard.js";
+import DayCard from "../src/components/DayCard";
 
 // ── Main page ───────────────────────────────────────────────
 

@@ -1,7 +1,11 @@
 name = "travel-planner"
-main = "worker/index.ts"
+main = ".open-next/worker.js"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
 
 [vars]
 # Set GOOGLE_AI_API_KEY as a secret using: wrangler secret put GOOGLE_AI_API_KEY

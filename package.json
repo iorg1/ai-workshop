@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
-    "start": "vinext start",
-    "deploy": "vinext deploy"
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
@@ -15,17 +15,13 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.30.2",
     "@cloudflare/workers-types": "^4.20260329.1",
+    "@opennextjs/cloudflare": "^1.19.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^6.0.0",
-    "@vitejs/plugin-rsc": "^0.5.19",
     "react-server-dom-webpack": "^19.2.4",
     "typescript": "^5.0.0",
-    "vinext": "^0.0.37",
-    "vite": "^8.0.0",
     "wrangler": "^4.0.0"
   }
 }

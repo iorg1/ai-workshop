@@ -1,4 +1,4 @@
-import type { Activity } from "../types/travel.js";
+import type { Activity } from "../types/travel";
 import styles from "../../pages/index.module.css";
 
 const ActivityCard = ({ activity }: { activity: Activity }) => (

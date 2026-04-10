@@ -1,4 +1,4 @@
-import type { Accommodation } from "../types/travel.js";
+import type { Accommodation } from "../types/travel";
 import styles from "../../pages/index.module.css";
 
 const AccommodationCard = ({ accommodation }: { accommodation: Accommodation }) => (
